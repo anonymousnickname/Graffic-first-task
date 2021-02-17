@@ -1,0 +1,33 @@
+.wrap {
+    flex: 1;
+    margin-left: 25px;
+}
+
+.info,
+.title,
+.description {
+    font-family: Rubik;
+
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+
+}
+
+.info {
+    font-size: 70px;
+    color: #263238;
+}
+
+.title {
+    margin-top: 10px;
+    font-size: 18px;
+    color: #263238;
+}
+
+.description {
+    font-size: 14px;
+    color: #60717a;
+}

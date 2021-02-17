@@ -1,0 +1,7 @@
+.flexWrap {
+    display: flex;
+}
+
+.widthGraffic {
+    flex: 2;
+}
