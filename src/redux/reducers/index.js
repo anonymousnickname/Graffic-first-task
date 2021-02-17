@@ -27,7 +27,7 @@ const initialState = {
     { x: 19, y: 6.5 },
     { x: 20, y: 6 },
 
-    { x: 21, y: 8 }],
+    { x: 21, y: 10 }],
     specialString: 'k'
 }
 

@@ -33,8 +33,15 @@ const MainGraffic = ({data, labels, specialString}) => {
         <div className={style.wrap}>
             <Line data={chartData}
                 options={{
+                    responsive: true,
                     maintainAspectRatio: false,
                     bezierCurve: false,
+                    layout: {
+                        padding: {
+                            top: 5,                      
+                            bottom: 15
+                        },
+                    },                    
                     legend: {
                         display: false,
                     },
@@ -54,7 +61,7 @@ const MainGraffic = ({data, labels, specialString}) => {
                             ticks: {
                                 beginAtZero: true,
                                 callback: function (value) {
-                                    if (value == 0) {
+                                    if (value == 0 || value == 10) {
                                         return ''
                                     }
                                     if (value % 2 == 0) {
