@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    font-family: 'Rubik';
 }
 
 .headerTitle {
@@ -16,13 +17,14 @@
 }
 
 .header select {
-    background-color: #0563af;
+    cursor: pointer;
+    background-color: #000;
     color: white;
     padding: 8px;
     border-radius: 2px;
     width: 110px;
     border: none;
-    font-size: 20px;
+    font-size: 16px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
     -webkit-appearance: button;
     appearance: button;
@@ -31,4 +33,5 @@
   
   .header select option {
     padding: 30px;
+    cursor: pointer
   }
