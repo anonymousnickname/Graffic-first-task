@@ -2,6 +2,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 import style from './style.module.css'
+import DropDown from '../Dropdown'
 import * as actions from '../../redux/actions';
 
 const Header = props => {
@@ -53,14 +54,16 @@ const Header = props => {
     }
 }
 
+const options = [
+  {value: 'days', title: '30 days'},
+  {value: 'hours', title: 'Thursday'}
+]
+
   return (
     <header className={style.header}>
         <div className={style.headerTitle}>Completed sign-ups over time</div>
         <div className={style.headerDropdown}>
-        <select  onChange={handleChange}>
-            <option value="days">30 days</option>
-            <option value="hours">Thursday</option>
-        </select>
+          <DropDown handleChange={handleChange} options={options}/>
         </div>
     </header>
   );

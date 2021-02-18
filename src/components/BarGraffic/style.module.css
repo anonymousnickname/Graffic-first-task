@@ -2,6 +2,7 @@
     padding: 10px;
     margin-top: 50px;
     font-family: Rubik;
+    position: relative;
 }
 
 .wrapInner {
@@ -43,10 +44,7 @@
     margin-top: 10px;
 }
 
-.BASIC {
-    background-color: blue;
-}
-
-.SERVICE {
-    background-color: green;
+.dropDown {
+    position: absolute;
+    right: 0;
 }

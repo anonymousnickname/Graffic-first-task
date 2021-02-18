@@ -1,0 +1,19 @@
+.select {
+    cursor: pointer;
+    background-color: #000;
+    color: white;
+    padding: 8px;
+    border-radius: 2px;
+    width: 110px;
+    border: none;
+    font-size: 16px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+    -webkit-appearance: button;
+    appearance: button;
+    outline: none;
+  }
+  
+  .select option {
+    padding: 30px;
+    cursor: pointer
+  }
