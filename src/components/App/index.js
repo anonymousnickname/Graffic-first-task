@@ -3,6 +3,7 @@ import MainContainer from '../MainContainer'
 import Header from '../Header'
 import Information from '../Information'
 import MainGraffic from '../MainGraffic'
+import BarGraffic from '../BarGraffic'
 
 const App = () => {
 
@@ -16,6 +17,7 @@ const App = () => {
            <MainGraffic/>
           </div>
         </div>
+        <BarGraffic/>
       </MainContainer>
     </div>
   );

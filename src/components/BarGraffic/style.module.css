@@ -1,0 +1,52 @@
+.wrap {
+    padding: 10px;
+    margin-top: 50px;
+    font-family: Rubik;
+}
+
+.wrapInner {
+    display: flex;
+    overflow-x: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+.block {
+    height: 450px;
+    min-width: 80px;
+    margin-right: 50px;
+}
+
+.barBlockWrap {
+    height: 400px;
+    position: relative;
+}
+
+.barBlock {
+    border-radius: 10px;
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    transform: rotate(270deg);
+    white-space: nowrap;
+}
+
+.percentageBlock {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.BASIC {
+    background-color: blue;
+}
+
+.SERVICE {
+    background-color: green;
+}
