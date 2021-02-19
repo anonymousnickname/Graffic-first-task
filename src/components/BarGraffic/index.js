@@ -100,7 +100,7 @@ const  makeArrOfObjects = () => {
             allOptions.push({value: key, title: key})
         }
         setOptions(allOptions)
-    }, [])
+    }, [options])
 
     return (
         <div className={style.wrap}>
