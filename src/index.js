@@ -11,12 +11,11 @@ import reducer from './redux/reducers';
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(logger)));
 
 ReactDOM.render(
-  <React.StrictMode>
+  
     <div className='wrapper'> 
       <Provider store={store}>
         <App />
       </Provider>
-    </div>
-  </React.StrictMode>,
+    </div>,
   document.getElementById('root')
 );
