@@ -2,10 +2,10 @@
 import style from './style.module.css'
 import { useState, useEffect } from 'react'
 import DropDown from '../Dropdown'
-import {dfs, findLeaves} from '../../helpers'
+import listOfBranches from '../../helpers/algorithm'
 const BarGraffic = () => {
-    const [options, setOptions] = useState([{value: 'All', title: 'All'}]);
-    const [list, setList] = useState([])
+    const [dropDownOptions, setDownOptions] = useState([{ value: 'All', title: 'All' }]); //setOptionsForDropdown
+    const [listOfData, setListOfData] = useState([]) // all list of data
     const [nodeMap, setNodeMap] = useState({
         "node1": {
             label: "Contact Info",
@@ -38,77 +38,39 @@ const BarGraffic = () => {
             adjList: []
         }
     })
-    const [obj, setObj] = useState({})
-    
-const leafArr = findLeaves(nodeMap)
-let arrOfBranches = []
-const findBranches = (nodeMap, arrAdjList, leaf) => {
-    arrAdjList.forEach(el => {
+    const [objOfSelectOption, setObjOfSelectOption] = useState({})
 
-        if (dfs(nodeMap, el, leaf)) {
-            arrOfBranches.push(el)
-            findBranches(nodeMap, nodeMap[el].adjList, leaf)
-            return
-        }
-    })
-}
-
-const makeArrOfBranches = () => {
-    const resultArr = [];
-    for (let i = 0; i < leafArr.length; i++) {
-        findBranches(nodeMap, nodeMap[Object.keys(nodeMap)[0]].adjList, leafArr[i])
-        arrOfBranches.unshift(Object.keys(nodeMap)[0])
-        resultArr.push({...arrOfBranches});
-        arrOfBranches = [];
-    }
-    return resultArr
-}
-
-const  makeArrOfObjects = () => {
-    let arrOfBranches = makeArrOfBranches();
-    let resultArr = [];
-    let branchObj = {};
-    for (let i = 0; i < arrOfBranches.length; i++) {
-        branchObj = {}
-        for (let key in arrOfBranches[i]) {
-            branchObj[arrOfBranches[i][key]] = nodeMap[arrOfBranches[i][key]] 
-        }
-        resultArr.push(branchObj)
-    }
-    return resultArr
-}
-
-    const handleChange = (e) => {
-        for (let key in obj) {
+    const handleChange = (e) => { // if our option is one of generated branches then choose it or choose all
+        for (let key in objOfSelectOption) {
             if (key === e.target.value) {
-                setList(Object.values(obj[key]))
+
+                setListOfData(Object.values(objOfSelectOption[key]))
                 return
-            } 
+            }
         }
-         setList(Object.values(nodeMap))
+        setListOfData(Object.values(nodeMap))
     }
 
-    useEffect(() => { 
-        const arrOfBranches = makeArrOfObjects(nodeMap);
-        setList(Object.values(nodeMap))
-        for (let i = 0; i < arrOfBranches.length; i++) {
-            obj[`branch${i+1}`] = arrOfBranches[i];
+    useEffect(() => {
+        setListOfData(Object.values(nodeMap))   //our list equals to nodemap
+        for (let i = 0; i < listOfBranches.length; i++) {  //listOfBranches we imported form algorithm file and generate names of our branches and set object
+            objOfSelectOption[`branch${i + 1}`] = listOfBranches[i];
         }
-        setObj(obj)
-        let allOptions = options;
-        for (let key in obj) {
-            allOptions.push({value: key, title: key})
+        setObjOfSelectOption(objOfSelectOption)
+        let allOptions = dropDownOptions;
+        for (let key in objOfSelectOption) {
+            allOptions.push({ value: key, title: key })
         }
-        setOptions(allOptions)
-    }, [options])
+        setDownOptions(allOptions)
+    }, [dropDownOptions])
 
     return (
         <div className={style.wrap}>
             <div className={style.dropDown}>
-                <DropDown options={options} handleChange={handleChange}/>
+                <DropDown options={dropDownOptions} handleChange={handleChange} />
             </div>
             <div className={style.wrapInner}>
-                {list.map(el => {
+                {listOfData.map(el => {
                     return (
                         <div key={Math.random()} className={style.block}>
                             <div className={style.barBlockWrap}>

@@ -1,4 +1,4 @@
-export const  dfs = (adj, v, t) => {
+export const  dfs = (adj, v, t) => {  // return true if nodes are on the same branch
     adj[v].visited = false
     if (v === t) return true
     if (adj[v].visited) return false
@@ -12,7 +12,7 @@ export const  dfs = (adj, v, t) => {
     return false
 }
 
-export const findLeaves = (nodeMap) => {
+export const findLeaves = (nodeMap) => {  // we find leaves in our tree
     const leafArr = []
     for (let key in nodeMap) {
         if (!nodeMap[key].adjList.length) {

@@ -8,6 +8,7 @@ import * as actions from '../../redux/actions';
 const Header = props => {
 
   const handleChange = e => {
+    // depend on which option we have we dispatch actions from redux 
     if (e.target.value === 'days') {
       props.setDay({
         labels: ["Oct 02", "", "", "", "", "Oct 09", "", "", "", "Oct 17", "", "", "", "", "Oct 24", "", "", "", "Oct 31", "", ""],
