@@ -94,7 +94,6 @@ const  makeArrOfObjects = () => {
         for (let i = 0; i < arrOfBranches.length; i++) {
             obj[`branch${i+1}`] = arrOfBranches[i];
         }
-        console.log(123)
         setObj(obj)
         let allOptions = options;
         for (let key in obj) {
