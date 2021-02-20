@@ -10,14 +10,14 @@ const App = () => {
   return (
     <div className='app'>
       <MainContainer>
-        <Header/>
+        <Header />
         <div className={style.flexWrap}>
           <Information />
           <div className={style.widthGraffic}>
-           <MainGraffic/>
+            <MainGraffic />
           </div>
         </div>
-        <BarGraffic/>
+        <BarGraffic />
       </MainContainer>
     </div>
   );

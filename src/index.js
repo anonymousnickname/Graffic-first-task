@@ -11,11 +11,10 @@ import reducer from './redux/reducers';
 const store = createStore(reducer, composeWithDevTools(applyMiddleware(logger)));
 
 ReactDOM.render(
-  
-    <div className='wrapper'> 
-      <Provider store={store}>
-        <App />
-      </Provider>
+    <div className='wrapper'>
+        <Provider store={store}>
+            <App />
+        </Provider>
     </div>,
-  document.getElementById('root')
+    document.getElementById('root')
 );

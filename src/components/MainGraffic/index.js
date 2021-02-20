@@ -3,7 +3,7 @@ import { Line } from 'react-chartjs-2'
 import style from './style.module.css'
 import { connect } from 'react-redux'
 
-const MainGraffic = ({data, labels, specialString}) => {
+const MainGraffic = ({ data, labels, specialString }) => {
     const [chartData, setChartData] = useState({})
 
     const chart = () => {
@@ -38,10 +38,10 @@ const MainGraffic = ({data, labels, specialString}) => {
                     bezierCurve: false,
                     layout: {
                         padding: {
-                            top: 5,                      
+                            top: 5,
                             bottom: 15
                         },
-                    },                    
+                    },
                     legend: {
                         display: false,
                     },
@@ -55,16 +55,16 @@ const MainGraffic = ({data, labels, specialString}) => {
                             gridLines: {
                                 drawBorder: false,
                                 borderDash: [3,],
-                                color: "#e8eaed",  
+                                color: "#e8eaed",
                                 offsetGridLines: true
                             },
                             ticks: {
                                 beginAtZero: true,
                                 callback: function (value) {
-                                    if (value == 0 || value == 10) {
+                                    if (value === 0 || value === 10) {
                                         return ''
                                     }
-                                    if (value % 2 == 0) {
+                                    if (value % 2 === 0) {
                                         return `${value}${specialString}`;
                                     }
 
@@ -87,10 +87,10 @@ const MainGraffic = ({data, labels, specialString}) => {
     );
 }
 
-const mapStateToProps = state => ({ 
+const mapStateToProps = state => ({
     data: state.data,
     labels: state.labels,
     specialString: state.specialString
- })
+})
 
 export default connect(mapStateToProps)(MainGraffic);

@@ -3,7 +3,7 @@ import { bindActionCreators } from 'redux'
 
 import style from './style.module.css'
 import DropDown from '../Dropdown'
-import * as actions from '../../redux/actions';
+import * as actions from '../../redux/actions'
 
 const Header = props => {
 

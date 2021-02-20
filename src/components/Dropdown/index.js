@@ -4,7 +4,7 @@ const DropDown = ({handleChange, options}) => {
     return (
         <select className={style.select} onChange={handleChange}>
             {options.map((el, index) => {
-                return <option key={index} value={el.value}>{el.title}</option>
+                return <option key={index + el.value} value={el.value}>{el.title}</option>
             })}
         </select>
     );
