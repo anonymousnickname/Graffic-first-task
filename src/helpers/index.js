@@ -21,3 +21,5 @@ export const findLeaves = (nodeMap) => {  // we find leaves in our tree
     }
     return leafArr
 }
+
+export const loadData = (jsonData) => JSON.parse(JSON.stringify(jsonData));
